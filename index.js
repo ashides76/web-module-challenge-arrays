@@ -113,7 +113,7 @@ function removeLastFlavor(array){
   array.pop();
   return array;
 }
-
+removeLastFlavor(originalFlavors);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -128,10 +128,11 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, num){
+  const flavor = array[num];
+  return flavor;
 }
-
+getFlavorByIndex(originalFlavors, 2);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -148,9 +149,12 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, string){
+  const indexValue = array.indexOf(string);
+  array.splice(indexValue, 1);
+  return array;
 }
+removeFlavorByName(originalFlavors, "Rocky Road");
 
 
 
