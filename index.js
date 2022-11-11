@@ -46,8 +46,9 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+  const copyOriginalFlavors = [...array];
+  return copyOriginalFlavors;
 }
 
 
