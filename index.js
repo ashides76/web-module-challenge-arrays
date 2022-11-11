@@ -50,7 +50,7 @@ function copy(array){
   const copyOriginalFlavors = [...array];
   return copyOriginalFlavors;
 }
-console.log(copy(originalFlavors));
+copy(originalFlavors);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -71,7 +71,7 @@ function is31Flavors(array){
     return false;
   }
  }
- console.log(is31Flavors(originalFlavors));
+ is31Flavors(originalFlavors);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -86,10 +86,14 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
-function addFlavor(/*your code here*/){
-  /*your code here*/
+console.log(originalFlavors.length);
+function addFlavor(array, string){
+    array.unshift(string); 
+    return array;
  }
+ addFlavor(originalFlavors, 'Rainbow Sherbert');
+
+
 
 
 
@@ -105,8 +109,9 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
+  array.pop();
+  return array;
 }
 
 
