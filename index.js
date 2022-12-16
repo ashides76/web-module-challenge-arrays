@@ -2,8 +2,8 @@
 
 /* 👀 This is your data ⬇ */
 const originalFlavors = [
-  "Banana Nut Fudge",
-  "Black Walnut",
+  "Banana Nut Fudge", 
+  "Black Walnut", 
   "Burgundy Cherry",
   "Butterscotch Ribbon",
   "Cherry Macaron",
@@ -50,7 +50,7 @@ function copy(array){
   const copyOriginalFlavors = [...array];
   return copyOriginalFlavors;
 }
-copy(originalFlavors);
+console.log("Task 1:", copy(originalFlavors));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -71,7 +71,7 @@ function is31Flavors(array){
     return false;
   }
  }
- is31Flavors(originalFlavors);
+ console.log("Task 2:", is31Flavors(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -91,7 +91,7 @@ function addFlavor(array, string){
     array.unshift(string); 
     return array;
  }
- addFlavor(originalFlavors, 'Rainbow Sherbert');
+ console.log("Task 3:", addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 
 
@@ -113,7 +113,7 @@ function removeLastFlavor(array){
   array.pop();
   return array;
 }
-removeLastFlavor(originalFlavors);
+console.log("Task 4:", removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -132,7 +132,7 @@ function getFlavorByIndex(array, num){
   const flavor = array[num];
   return flavor;
 }
-getFlavorByIndex(originalFlavors, 2);
+// console.log("Task 5", getFlavorByIndex(originalFlavors, 2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -154,7 +154,7 @@ function removeFlavorByName(array, string){
   array.splice(indexValue, 1);
   return array;
 }
-removeFlavorByName(originalFlavors, "Rocky Road");
+// console.log("Task 6:", removeFlavorByName(originalFlavors, "Rocky Road"));
 
 
 
@@ -185,7 +185,7 @@ function filterByWord(array, string){
     }
     return chocolateFlavors;
   }
-filterByWord(originalFlavors, "Chocolate");
+console.log("Task 7:", filterByWord(originalFlavors, "Chocolate"));
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
@@ -210,7 +210,7 @@ function getAverageWordLength(arr){
     return total/count.length;
   }
 }
-console.log('length:', getAverageWordLength(originalFlavors));
+// console.log("Stretch 1:", getAverageWordLength(originalFlavors));
 
 //example:
 // const str1 = 'The quick brown fox jumps over the lazy dog.';
@@ -320,23 +320,23 @@ Use the getRandomFlavors function and new arrays below to do the following:
   For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
-console.log("OF:", originalFlavors.length);
-console.log("NF:", newFlavors.length);
-console.log("SF:", seasonalFlavors.length);
-console.log("RF:", regionalFlavors.length);
+// console.log("OF:", originalFlavors.length);
+// console.log("NF:", newFlavors.length);
+// console.log("SF:", seasonalFlavors.length);
+// console.log("RF:", regionalFlavors.length);
 let randomFlavors = []
 function getRandomFlavors(arr1, arr2, arr3, arr4){
-  const of = Math.ceil(Math.random() * arr1.length) - 1;
-  const nf = Math.ceil(Math.random() * arr2.length) - 1;
-  const sf = Math.ceil(Math.random() * arr3.length) - 1;
-  const rf = Math.ceil(Math.random() * arr4.length) - 1;
-  randomFlavors.push(arr1[of], arr2[nf], arr3[sf], arr4[rf]);
-  return randomFlavors;
+  const allFlavors = [...arr1, ...arr2, ...arr3, ...arr4]
+  console.log(allFlavors.length);
+    for (let i = 0; i < 31; i++) {
+      const ranIndNum = Math.ceil(Math.random() * allFlavors.length) - 1;
+      randomFlavors.push(allFlavors[ranIndNum]);
+      allFlavors.splice(ranIndNum, 1); // splice is used to remove selected flavor so it won't repeat again in the next loop. 
+    }
+    return randomFlavors;
   }
-  console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
-// note: sometimes receives undefined;
-// arrays were defined prior to declaration error...
-
+  // console.log("Stretch 2:", getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
+  // console.log(randomFlavors.length);
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
 function foo(){
